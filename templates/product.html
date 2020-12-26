@@ -5,10 +5,14 @@
 {% block content %}
     <div class="container">
         <div class="header">
-            <h1>Телефон</h1>
+            <h1>{{ phone.name }}</h1>
         </div>
         <div class="content">
-
+            <p><img src="{{ phone.image }}" width="200" height="400"></p>
+            <p>Цена телефона: {{ phone.price }}</p>
+            <p>Дата релиза: {{ phone.release_date }}</p>
+            <p>Наличие ЛТЕ: {% if phone.lte_exists%} Есть {% else %} Отсутствует {% endif %}</p>
+            <a href="{% url "catalog" %}">Обратно к списку</a>
         </div>
     </div>
 {% endblock %}
